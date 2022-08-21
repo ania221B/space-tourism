@@ -26,8 +26,11 @@
     <title>Frontend Mentor | Space tourism website</title>
   </head>
   <body class="home">
+    <a class="skip-to-content" href="#main-content" aria-label="skip to content"
+      >Skip to content</a
+    >
     <header class="primary-header flex">
-      <div>
+      <div class="logo">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
           <g fill="none" fill-rule="evenodd">
             <circle cx="24" cy="24" r="24" fill="#FFF" />
@@ -57,14 +60,14 @@
             <a
               class="ff-secondary text-white uppercase letter-spacing-2"
               href="index.html"
-              ><span>00</span>Home</a
+              ><span aria-hidden="true">00</span>Home</a
             >
           </li>
           <li>
             <a
               class="ff-secondary text-white uppercase letter-spacing-2"
               href="destination.html"
-              ><span>01</span>Destination</a
+              ><span aria-hidden="true">01</span>Destination</a
             >
           </li>
           <li>
@@ -78,13 +81,13 @@
             <a
               class="ff-secondary text-white uppercase letter-spacing-2"
               href="technology.html"
-              ><span>03</span>Technology</a
+              ><span aria-hidden="true">03</span>Technology</a
             >
           </li>
         </ul>
       </nav>
     </header>
-    <main class="grid-container grid-container--home flow">
+    <main id="main-content" class="grid-container grid-container--home flow">
       <div class="flow">
         <h1 class="ff-secondary fs-500 uppercase letter-spacing-1">
           So, you want to travel to
