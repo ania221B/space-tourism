@@ -682,3 +682,21 @@ body {
         background-image: url("../assets/home/background-home-desktop.jpg");
     }
 } 
+
+/* ===== DESTINATION ===== */
+
+.destination {
+    background-image: url(../assets/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+    .destination {
+        background-image: url(../assets/destination/background-destination-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .destination {
+        background-image: url(../assets/destination/background-destination-desktop.jpg);
+    }
+}
