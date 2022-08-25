@@ -146,18 +146,6 @@ select {
     scroll-behavior: auto !important;
   }
 }
-
-
-/* ================== */
-/* GLOBAL STYLES     */
-/* ================= */
-
-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 /* ================== */
 /* UTILITY CLASSES   */
 /* ================= */
@@ -187,6 +175,10 @@ button {
 .flow > *:where(:not(:first-child)) {
     margin-top: var(--flow-space, 1rem);
 } 
+
+.flow--space-small {
+    --flow-space: 0.75rem;
+}
 
 .sr-only {
     position: absolute;
@@ -381,8 +373,9 @@ button {
 
 .underline-indicators > * { 
     cursor: pointer;
-    border: 0;
-    padding: var(--underline-gap, 1rem) 0;
+    border: none;
+    background-color: transparent;
+    padding: var(--underline-gap, 0.5rem) 0;
     position: relative; 
 }
 
@@ -555,6 +548,7 @@ button {
     aspect-ratio: 1;
     border: 0;
     border-radius: 50%;
+    padding: 0.4em;
     background-color: hsl(var(--clr-neutral-100) / .25);
 }
 
@@ -809,21 +803,18 @@ body {
     grid-area: content;
 }
 
-.grid-container--crew > .dot-indicators {
+.grid-container--crew > .dot-list {
     grid-area: dots;
 }
 
 .grid-container--crew > img {
     grid-area: image;
+    max-width: 60%;
     border-bottom: 1px solid hsl(var(--clr-neutral-100) / .1);
 }
 
 .crew-details h2 {
     color: hsl(var(--clr-neutral-100) / .25);
-}
-
-.crew-details h2 + p {
-    margin-top: 0.5rem;
 }
 
 @media (min-width: 35em) {
@@ -847,9 +838,6 @@ body {
         padding-bottom: 0;
     }
 
-    .grid-container--crew > img {
-        border-bottom: none;
-    }
 }
 
 @media (min-width: 45em) {
@@ -881,7 +869,8 @@ body {
             " . image content . " ;
     }
 
-    .grid-container--destination > img {
+    .grid-container--destination > img,
+    .grid-container--crew > img {
         max-width: 90%;
     }
 
@@ -891,28 +880,12 @@ body {
     }
 
     .grid-container--crew {
-        justify-items: start;
-        align-items: center;
-        grid-template-rows: repeat(2, min-content) 1fr min-content;
+        justify-items: start;   
         grid-template-areas: 
             " . title title . "
-            " . . image . "
             " . content image . "
             " . dots image ."
         ;
-    }
-
-    .grid-container--crew > img {
-        max-width: 100%;
-    }
-
-    .grid-container--crew > .dot-indicators {
-        place-self: start;
-        padding-bottom: 6rem;
-    }
-
-    .crew-details h2 + p {
-        margin-top: 0.9375rem;
     }
 
 }
