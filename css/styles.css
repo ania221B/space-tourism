@@ -816,7 +816,7 @@ body {
 }
 
 .crew-details h2 {
-    color: hsl(var(--clr-neutral-100) / .25);
+    color: hsl(var(--clr-neutral-100) / .5);
 }
 
 @media (min-width: 35em) {
