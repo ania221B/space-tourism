@@ -14,7 +14,7 @@
     --fs-800: 3.5rem;
     --fs-700: 1.5rem;
     --fs-600: 1rem;
-    --fs-500: 1.75rem;
+    --fs-500: 1rem;
     --fs-400: 0.9375rem;
     --fs-300: 1rem;
     --fs-200: 0.875rem;
@@ -30,6 +30,7 @@
         --fs-800: 5rem;
         --fs-700: 2.5rem;
         --fs-600: 1.5rem;
+        --fs-500: 1.25rem;
         --fs-400: 1rem;
     }
 }
@@ -40,6 +41,7 @@
         --fs-800: 6.25rem;
         --fs-700: 3.5rem;
         --fs-600: 2rem;
+        --fs-500: 1.75rem;
         --fs-400: 1.125rem;
     }
 }
@@ -169,38 +171,6 @@ button {
 .flex {
     display: flex;
     gap: var(--gap, 1rem);
-}
-
-.grid-container {
-    padding-inline: 1.5rem;
-    text-align: center;
-    display: grid;
-    place-items: center;
-}
-
-.grid-container * {
-    max-width: 50ch;
-}
-
-@media (min-width: 45em) {
-    .grid-container {
-        text-align: left;
-        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(.5rem, 1fr);
-        column-gap: var(--container-gap, 2rem);
-    }
-    
-    .grid-container > *:first-child {
-        grid-column: 2;
-    }
-    
-    .grid-container > *:last-child {
-        grid-column: 3;
-    }
-
-    .grid-container--home {
-        padding-bottom: max(6rem, 20vh);
-        align-items: end;
-    }
 }
 
 .d-block {
@@ -433,7 +403,7 @@ button {
 }
 
 .underline-indicators > .active::before,
-.underline-indicators > [aria-selected="true"] {
+.underline-indicators > [aria-selected="true"]::before {
     background-color: hsl(var(--clr-neutral-100));
     transform:scaleX(1)
 }
@@ -640,7 +610,7 @@ button {
     opacity: 1;
 }
 
-/* ===== ALL PAGES ===== */
+/* all pages */
 
 /* .primary-header {
     padding: 1.5rem 2rem;
@@ -661,7 +631,7 @@ body {
     background-position: bottom center;
 }
 
-/* ===== HOME ===== */
+/* home */
 .home {
     background-image: url("../assets/home/background-home-mobile.jpg");
 }
@@ -683,7 +653,7 @@ body {
     }
 } 
 
-/* ===== DESTINATION ===== */
+/* destination */
 
 .destination {
     background-image: url(../assets/destination/background-destination-mobile.jpg);
@@ -700,3 +670,225 @@ body {
         background-image: url(../assets/destination/background-destination-desktop.jpg);
     }
 }
+
+/* .tabby {
+    grid-template-rows: min-content 1fr;
+    --gap: 1.5rem;
+}
+
+.tabs {
+    --gap: 2rem;
+    justify-content: center;
+}
+
+.tab__content {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    margin-inline: auto;
+    padding: 0;
+}
+
+.tab__content > * {
+    --gap: 1.5rem;
+    flex-direction: column;
+    position: absolute;
+
+}
+
+.tab__content > *:not(.active) {
+    opacity: 0;
+    transition: opacity 700ms ease-in-out;
+}
+
+.tab__content > .active {
+    opacity: 1;
+    transition: opacity 700ms ease-in-out 700ms;
+}
+
+.tab__content__image {
+    max-width: 20rem;
+    margin-inline: auto;
+}
+
+.tab__content__body > p {
+    max-width: 37rem;
+    margin-inline: auto;
+    padding-bottom: 2rem;
+}
+.stats {
+    padding-top: 2rem;
+    border-top: 1px solid hsl(var(--clr-neutral-100) / .25);
+    flex-direction: column;
+    justify-content: center;
+} */
+
+/* ========================== */
+/* LAYOUT                    */
+/* ======================== */
+
+
+.grid-container {
+    padding-inline: 1.5rem;
+    padding-bottom: 4rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.grid-container p:not([class]) {
+    max-width: 50ch;
+}
+
+.numbered-title {
+    grid-area: title;
+}
+
+/* destination layout */
+
+.grid-container--destination {
+    --flow-space: 2rem;
+    grid-template-areas: 
+        "title"
+        "image"
+        "tabs"
+        "content" ;
+}
+
+.grid-container--destination > img {
+    grid-area: image;
+    max-width: 60%;
+}
+
+.grid-container--destination > .tab-list {
+    grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+    grid-area: content;
+}
+
+.destination-meta {
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid hsl(var(--clr-neutral-100) / .25);
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.destination-meta p {
+    font-size: 1.75rem;
+}
+
+@media (min-width: 35em) {
+    .numbered-title {
+        justify-self: start;
+        margin-block-start: 2rem;
+    }
+
+    .destination-meta {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 45em) {
+    .grid-container {
+        text-align: left;
+        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(.5rem, 1fr);
+        column-gap: var(--container-gap, 2rem);
+    }
+
+    .grid-container--home {
+        padding-bottom: max(6rem, 20vh);
+        align-items: end;
+    }
+
+    .grid-container--home > *:first-child {
+        grid-column: 2;
+    }
+    
+    .grid-container--home > *:last-child {
+        grid-column: 3;
+    }
+
+    .grid-container--destination {
+        justify-items: start;
+        align-content: start;
+        grid-template-rows: repeat(2, min-content) 1fr;
+        grid-template-areas: 
+            " . title title . "
+            " . image tabs . "
+            " . image content . " ;
+    }
+
+    .grid-container--destination > img {
+        max-width: 90%;
+    }
+
+    .destination-meta {
+        --gap: clamp(2rem, 7vw, 6rem);
+        justify-content: start;
+    }
+    
+}
+
+/* .grid-container--pages {
+    padding-inline: 1.5rem;
+    text-align: center;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    row-gap: 2rem;
+}
+
+.grid-container--pages > *:first-child {
+    justify-self: start;
+}
+
+/* my version with areas 
+.grid-container--destination {
+    padding-inline: 1.5rem;
+    text-align: center;
+    grid-template-areas:
+    "title"
+    "image"
+    "tabs"
+    "article"
+     ;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, min-content) 1fr;
+}
+
+@media(min-width: 45em) {
+    .grid-container--destination {
+        text-align: left;
+        grid-template-areas:
+        ". title title ."
+        ". image tabs ."
+        ". image article ."
+         ;
+        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(.5rem, 1fr);
+        grid-template-rows: repeat(2, min-content) 1fr;
+    }
+    
+}
+.grid-container--destination > h1 {
+    grid-area: title;
+}
+
+.grid-container--destination > img {
+    grid-area: image;
+    align-self: center;
+}
+
+.grid-container--destination > .tabs {
+    grid-area: tabs;
+}
+
+.grid-container--destination > article {
+    grid-area: article;
+    align-self: start;
+    margin-top: 2rem;
+}
+
+*/

@@ -76,17 +76,87 @@
         </ul>
       </nav>
     </header>
-    <main id="destination">
-      <h1 class="numbered-title text-white"><span>01</span> Pick your destination</h1>
-      <div class="tabby">
-        <div class="tabs underline-indicators">
-          <button type="button" class="active ff-secondary uppercase text-accent letter-spacing-2">Moon</button>
-          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2">Mars</button>
-          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2">Europa</button>
-          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2">Titan</button>
+
+    <main id="main" class="grid-container grid-container--destination flow">
+      <h1
+        class="ff-secondary fs-500 numbered-title text-white letter-spacing-1"
+      >
+        <span aria-hidden="true">01</span> Pick your destination
+      </h1>
+
+      <img src="assets/destination/image-moon.png" alt="the Moon" />
+
+      <div class="tab-list underline-indicators flex">
+        <button
+          type="button"
+          aria-selected="true"
+          class="ff-secondary uppercase text-accent letter-spacing-2"
+          data-theme="moon"
+        >
+          Moon
+        </button>
+        <button
+          type="button"
+          aria-selected="false"
+          class="ff-secondary uppercase text-accent letter-spacing-2"
+          data-theme="mars"
+        >
+          Mars
+        </button>
+        <button
+          type="button"
+          aria-selected="false"
+          class="ff-secondary uppercase text-accent letter-spacing-2"
+          data-theme="europa"
+        >
+          Europa
+        </button>
+        <button
+          type="button"
+          aria-selected="false"
+          class="ff-secondary uppercase text-accent letter-spacing-2"
+          data-theme="titan"
+        >
+          Titan
+        </button>
+      </div>
+
+      <article class="destination-info">
+        <h2 class="ff-accent fs-800 text-white uppercase">Moon</h2>
+        <p>
+          See our planet as you’ve never seen it before. A perfect relaxing trip
+          away to help regain perspective and come back refreshed. While you’re
+          there, take in some history by visiting the Luna 2 and Apollo 11
+          landing sites.
+        </p>
+
+        <div class="destination-meta flex">
+          <div>
+            <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">
+              Avg. distance
+            </h3>
+            <p class="ff-accent text-white uppercase">384,400 km</p>
+          </div>
+          <div>
+            <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">
+              Est. travel time
+            </h3>
+            <p class="ff-accent text-white uppercase">3 days</p>
+          </div>
+        </div>
+      </article>
+    </main>
+    <!-- <main id="destination" class="grid-container--pages">
+      <h1 class="ff-secondary fs-500 numbered-title text-white letter-spacing-1"><span>01</span> Pick your destination</h1>
+      <div class="tabby grid">
+        <div class="tabs underline-indicators flex">
+          <button type="button" class="active ff-secondary uppercase text-accent letter-spacing-2" data-theme="moon">Moon</button>
+          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2" data-theme="mars">Mars</button>
+          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2" data-theme="europa">Europa</button>
+          <button type="button" class="ff-secondary uppercase text-accent letter-spacing-2" data-theme="titan">Titan</button>
         </div>
         <ul class="tab__content" role="list">
-          <li>
+          <li id="moon" class="active flex">
             <div class="tab__content__image">
             <img
               src="assets/destination/image-moon.png"
@@ -103,17 +173,17 @@
             </p>
             <div class="stats flex">
               <div>
-                <h3>Avg. distance</h3>
-                <p>384,400 km</p>
+                <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Avg. distance</h3>
+                <p class="ff-accent fs-500 text-white uppercase">384,400 km</p>
               </div>
               <div>
-                <h3>Est. travel time</h3>
-                <p>3 days</p>
+                <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Est. travel time</h3>
+                <p class="ff-accent fs-500 text-white uppercase">3 days</p>
               </div>
             </div>
             </div>
           </li>
-          <li>
+          <li id="mars">
             <div class="tab__content__image">
               <img src="assets/destination/image-mars.png" alt="picture of Mars">
             </div>
@@ -124,17 +194,17 @@
                 the size of Everest!</p>
               <div class="stats flex">
                 <div>
-                  <h3>Avg. distance</h3>
-                  <p>225 mil. km</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Avg. distance</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">225 mil. km</p>
                 </div>
                 <div>
-                  <h3>Est. travel time</h3>
-                  <p>9 months</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Est. travel time</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">9 months</p>
                 </div>
               </div>
             </div>
           </li>
-          <li>
+          <li id="europa">
             <div class="tab__content__image">
               <img src="assets/destination/image-europa.png" alt="picture of Europa">
             </div>
@@ -146,17 +216,17 @@
                 wintery cabin.</p>
               <div class="stats flex">
                 <div>
-                  <h3>Avg. distance</h3>
-                  <p>628 mil. km</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Avg. distance</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">628 mil. km</p>
                 </div>
                 <div>
-                  <h3>Est. travel time</h3>
-                  <p>3 years</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Est. travel time</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">3 years</p>
                 </div>
               </div>
             </div>
           </li>
-          <li>
+          <li id="titan">
             <div class="tab__content__image">
               <img src="assets/destination/image-titan.png" alt="picture of Titan">
             </div>
@@ -167,17 +237,17 @@
                 bonus, you get striking views of the Rings of Saturn.</p>
               <div class="stats flex">
                 <div>
-                  <h3>Avg. distance</h3>
-                  <p>1.6 bil. km</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Avg. distance</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">1.6 bil. km</p>
                 </div>
                 <div>
-                  <h3>Est. travel time</h3>
-                  <p>7 years</p>
+                  <h3 class="ff-secondary fs-200 uppercase letter-spacing-3">Est. travel time</h3>
+                  <p class="ff-accent fs-500 text-white uppercase">7 years</p>
                 </div>
               </div>
             </div>
           </li>
         </ul>
-    </main>
+    </main> -->
   </body>
 </html>
