@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Bellefair&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <title>Frontend Mentor | Space tourism website</title>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body class="crew">
+    <a class="skip-to-content" href="#main-content" aria-label="skip to content"
+      >Skip to content</a
+    >
+    <header class="primary-header flex">
+      <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+          <g fill="none" fill-rule="evenodd">
+            <circle cx="24" cy="24" r="24" fill="#FFF" />
+            <path
+              fill="#0B0D17"
+              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
+            />
+          </g>
+        </svg>
+      </div>
+      <button
+        type="button"
+        class="mobile-nav-toggle"
+        aria-controls="primary-nav"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Mobile Navigation Menu</span>
+      </button>
+      <nav>
+        <ul
+          id="primary-nav"
+          class="primary-nav underline-indicators flex"
+          role="list"
+          data-visibility="false"
+        >
+          <li>
+            <a
+              class="ff-secondary text-white uppercase letter-spacing-2"
+              href="index.html"
+              ><span aria-hidden="true">00</span>Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-secondary text-white uppercase letter-spacing-2"
+              href="destination.html"
+              ><span aria-hidden="true">01</span>Destination</a
+            >
+          </li>
+          <li class="active">
+            <a
+              class="ff-secondary text-white uppercase letter-spacing-2"
+              href="crew.html"
+              ><span aria-hidden="true">02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a
+              class="ff-secondary text-white uppercase letter-spacing-2"
+              href="technology.html"
+              ><span aria-hidden="true">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" class="grid-container grid-container--crew flow">
+      <h1
+        class="numbered-title ff-secondary fs-500 text-white letter-spacing-1"
+      >
+        <span>02</span>Meet your crew
+      </h1>
+
+      <article class="flow">
+        <h2 class="function-title ff-accent fs-700 text-white uppercase">
+          <span class="d-block">Commander</span>Douglas Hurley
+        </h2>
+        <p>
+          Douglas Gerald Hurley is an American engineer, former Marine Corps
+          pilot and former NASA astronaut. He launched into space for the third
+          time as commander of Crew Dragon Demo-2.
+        </p>
+      </article>
+
+      <div class="dot-indicators flex">
+        <button type="button" aria-selected="true">
+          <span class="sr-only">Commander Douglas Hurley</span>
+        </button>
+        <button type="button" aria-selected="false">
+          <span class="sr-only">Mission Specialist Mark Shuttleworth</span>
+        </button>
+        <button type="button" aria-selected="false">
+          <span class="sr-only">Pilot Victor Glover</span>
+        </button>
+        <button type="button" aria-selected="false">
+          <span class="sr-only">Flight Engineer Anousheh Ansari</span>
+        </button>
+      </div>
+
+      <img
+        src="assets/crew/image-douglas-hurley.png"
+        alt="Commander Douglas Hurley"
+      />
+    </main>
+  </body>
+</html>
