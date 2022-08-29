@@ -36,7 +36,7 @@ navToggleButton.addEventListener('click', e => {
 /* TABBY         */
 /* ============ */
 
-const tabList = document.querySelector('.tabs')
+/* const tabList = document.querySelector('.tabs')
 const tabs = [...tabList.children]
 const contentList = document.querySelector('.tab__content')
 const contentItems = [...contentList.children]
@@ -57,6 +57,8 @@ tabList.addEventListener('click', e => {
   tab.classList.add('active')
   tabContent.classList.add('active')
 })
+
+*/
 
 /* ============= */
 /* METHOD 2       */

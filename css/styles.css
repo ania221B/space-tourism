@@ -951,3 +951,15 @@ body {
 }
 
 */
+
+[role="tab"]:focus {
+    color: limegreen;
+}
+
+picture[data-visible="false"] {
+    opacity: 0;
+}
+
+picture[data-visible="true"] {
+    opacity: 1;
+}
