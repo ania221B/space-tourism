@@ -95,12 +95,18 @@
         <span aria-hidden="true">01</span> Pick your destination
       </h1>
 
-      <picture class="destination-img" data-theme="moon" data-visible="true">
+      <picture
+        id="moon-image"
+        class="destination-img"
+        data-theme="moon"
+        data-visible="true"
+      >
         <source srcset="assets/destination/image-moon.webp" type="image/webp" />
         <img src="assets/destination/image-moon.png" alt="the Moon" />
       </picture>
 
       <picture
+        id="mars-image"
         class="destination-img"
         data-theme="mars"
         data-visible="false"
@@ -110,6 +116,7 @@
         <img src="assets/destination/image-mars.png" alt="the planet Mars" />
       </picture>
       <picture
+        id="europa-image"
         class="destination-img"
         data-theme="europa"
         data-visible="false"
@@ -122,6 +129,7 @@
         <img src="assets/destination/image-europa.png" alt="the moon Europa" />
       </picture>
       <picture
+        id="titan-image"
         class="destination-img"
         data-theme="titan"
         data-visible="false"
@@ -147,6 +155,7 @@
           class="ff-secondary uppercase text-accent letter-spacing-2"
           data-theme="moon"
           tab-index="0"
+          data-image="moon-image"
         >
           Moon
         </button>
@@ -158,6 +167,7 @@
           class="ff-secondary uppercase text-accent letter-spacing-2"
           data-theme="mars"
           tab-index="-1"
+          data-image="mars-image"
         >
           Mars
         </button>
@@ -169,6 +179,7 @@
           class="ff-secondary uppercase text-accent letter-spacing-2"
           data-theme="europa"
           tab-index="-1"
+          data-image="europa-image"
         >
           Europa
         </button>
@@ -180,13 +191,19 @@
           class="ff-secondary uppercase text-accent letter-spacing-2"
           data-theme="titan"
           tab-index="-1"
+          data-image="titan-image"
         >
           Titan
         </button>
       </div>
 
       <!-- the Moon -->
-      <article data-theme="moon" class="destination-info flow">
+      <article
+        id="moon-tab"
+        data-theme="moon"
+        class="destination-info flow"
+        role="tabpanel"
+      >
         <h2 class="ff-accent fs-800 text-white uppercase">Moon</h2>
         <p>
           See our planet as you’ve never seen it before. A perfect relaxing trip
@@ -212,7 +229,13 @@
       </article>
 
       <!-- Mars -->
-      <article data-theme="mars" class="destination-info flow" hidden>
+      <article
+        id="mars-tab"
+        data-theme="mars"
+        class="destination-info flow"
+        role="tabpanel"
+        hidden
+      >
         <h2 class="ff-accent fs-800 text-white uppercase">Mars</h2>
 
         <p>
@@ -238,7 +261,13 @@
       </article>
 
       <!-- Europa -->
-      <article data-theme="europa" class="destination-info flow" hidden>
+      <article
+        id="europa-tab"
+        data-theme="europa"
+        class="destination-info flow"
+        role="tabpanel"
+        hidden
+      >
         <h2 class="ff-accent fs-800 text-white uppercase">Europa</h2>
 
         <p>
@@ -265,7 +294,13 @@
       </article>
 
       <!-- Titan -->
-      <article data-theme="titan" class="destination-info flow" hidden>
+      <article
+        id="titan-tab"
+        data-theme="titan"
+        class="destination-info flow"
+        role="tabpanel"
+        hidden
+      >
         <h2 class="ff-accent fs-800 text-white uppercase">Titan</h2>
 
         <p>

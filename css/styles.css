@@ -952,10 +952,6 @@ body {
 
 */
 
-[role="tab"]:focus {
-    color: limegreen;
-}
-
 picture[data-visible="false"] {
     opacity: 0;
 }

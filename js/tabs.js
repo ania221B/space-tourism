@@ -1,9 +1,13 @@
 const tabList = document.querySelector('[role="tablist"]')
 const tabs = Array.from(tabList.querySelectorAll('[role="tab"]'))
-const articles = Array.from(document.querySelectorAll('.destination-info'))
-const images = Array.from(document.querySelectorAll('.destination-img'))
+// const articles = Array.from(document.querySelectorAll('.destination-info'))
+// const images = Array.from(document.querySelectorAll('.destination-img'))
 
 tabList.addEventListener('keydown', changeTabFocus)
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', changeTabPanel)
+})
 
 let tabFocus = 0
 function changeTabFocus (e) {
@@ -31,6 +35,7 @@ function changeTabFocus (e) {
     }
   }
 
+  /*
   const theme = tabs[tabFocus].getAttribute('data-theme')
   const currentArticle = document.querySelector(`article[data-theme="${theme}"]`)
   const currentImage = document.querySelector(`picture[data-theme="${theme}"]`)
@@ -45,4 +50,49 @@ function changeTabFocus (e) {
 
   currentArticle.removeAttribute('hidden')
   currentImage.setAttribute('data-visible', true)
+  */
+}
+
+/* tabList.addEventListener('click', e => {
+  const currentTab = e.target.closest('button[role="tab"]')
+  const theme = currentTab.getAttribute('data-theme')
+  const currentArticle = document.querySelector(`article[data-theme="${theme}"]`)
+  const currentImage = document.querySelector(`picture[data-theme="${theme}"]`)
+  if (!currentTab) return
+
+  tabs.forEach(t => t.setAttribute('aria-selected', false))
+  currentTab.setAttribute('aria-selected', true)
+
+  articles.forEach(article => article.setAttribute('hidden', true))
+  images.forEach(image => image.setAttribute('data-visible', false))
+
+  currentArticle.removeAttribute('hidden')
+  currentImage.setAttribute('data-visible', true)
+}) */
+
+function changeTabPanel (e) {
+  const targetTab = e.target
+  const targetPanel = targetTab.getAttribute('aria-controls')
+  const targetImage = targetTab.getAttribute('data-image')
+
+  const tabContainer = targetTab.parentNode
+  const mainContainer = tabContainer.parentNode
+
+  tabContainer
+    .querySelector('[aria-selected="true"]')
+    .setAttribute('aria-selected', false)
+
+  targetTab.setAttribute('aria-selected', true)
+
+  mainContainer
+    .querySelectorAll('[role="tabpanel"]')
+    .forEach((panel) => panel.setAttribute('hidden', true))
+
+  mainContainer.querySelector([`#${targetPanel}`]).removeAttribute('hidden')
+
+  mainContainer
+    .querySelectorAll('picture')
+    .forEach((pic) => pic.setAttribute('data-visible', false))
+
+  mainContainer.querySelector([`#${targetImage}`]).setAttribute('data-visible', true)
 }
