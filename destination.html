@@ -153,7 +153,6 @@
           role="tab"
           aria-controls="moon-tab"
           class="ff-secondary uppercase text-accent letter-spacing-2"
-          data-theme="moon"
           tab-index="0"
           data-image="moon-image"
         >
@@ -165,7 +164,6 @@
           role="tab"
           aria-controls="mars-tab"
           class="ff-secondary uppercase text-accent letter-spacing-2"
-          data-theme="mars"
           tab-index="-1"
           data-image="mars-image"
         >
@@ -177,7 +175,6 @@
           role="tab"
           aria-controls="europa-tab"
           class="ff-secondary uppercase text-accent letter-spacing-2"
-          data-theme="europa"
           tab-index="-1"
           data-image="europa-image"
         >
@@ -189,7 +186,6 @@
           role="tab"
           aria-controls="titan-tab"
           class="ff-secondary uppercase text-accent letter-spacing-2"
-          data-theme="titan"
           tab-index="-1"
           data-image="titan-image"
         >
@@ -200,9 +196,10 @@
       <!-- the Moon -->
       <article
         id="moon-tab"
-        data-theme="moon"
         class="destination-info flow"
         role="tabpanel"
+        tabindex="0"
+        data-visible="true"
       >
         <h2 class="ff-accent fs-800 text-white uppercase">Moon</h2>
         <p>
@@ -231,10 +228,10 @@
       <!-- Mars -->
       <article
         id="mars-tab"
-        data-theme="mars"
         class="destination-info flow"
         role="tabpanel"
-        hidden
+        tabindex="0"
+        data-visible="false"
       >
         <h2 class="ff-accent fs-800 text-white uppercase">Mars</h2>
 
@@ -263,10 +260,10 @@
       <!-- Europa -->
       <article
         id="europa-tab"
-        data-theme="europa"
         class="destination-info flow"
         role="tabpanel"
-        hidden
+        tabindex="0"
+        data-visible="false"
       >
         <h2 class="ff-accent fs-800 text-white uppercase">Europa</h2>
 
@@ -296,10 +293,10 @@
       <!-- Titan -->
       <article
         id="titan-tab"
-        data-theme="titan"
         class="destination-info flow"
         role="tabpanel"
-        hidden
+        tabindex="0"
+        data-visible="false"
       >
         <h2 class="ff-accent fs-800 text-white uppercase">Titan</h2>
 
