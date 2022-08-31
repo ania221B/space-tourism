@@ -22,6 +22,7 @@
 
     <title>Frontend Mentor | Space tourism website</title>
     <script src="js/navigation.js" defer></script>
+    <script src="js/tabs.js" defer></script>
   </head>
   <body class="crew">
     <a class="skip-to-content" href="#main-content" aria-label="skip to content"
@@ -92,22 +93,61 @@
         <span>02</span>Meet your crew
       </h1>
 
-      <div class="dot-list dot-indicators flex">
-        <button type="button" aria-selected="true">
+      <div
+        class="dot-list dot-indicators flex"
+        role="tablist"
+        aria-label="crew member list"
+      >
+        <button
+          type="button"
+          aria-selected="true"
+          role="tab"
+          aria-controls="commander-tab"
+          tabindex="0"
+          data-image="commander-image"
+        >
           <span class="sr-only">The Commander</span>
         </button>
-        <button type="button" aria-selected="false">
+        <button
+          type="button"
+          aria-selected="false"
+          role="tab"
+          aria-controls="specialist-tab"
+          tabindex="-1"
+          data-image="specialist-image"
+        >
           <span class="sr-only">The Mission Specialist</span>
         </button>
-        <button type="button" aria-selected="false">
+        <button
+          type="button"
+          aria-selected="false"
+          role="tab"
+          aria-controls="pilot-tab"
+          tabindex="-1"
+          data-image="pilot-image"
+        >
           <span class="sr-only">The Pilot</span>
         </button>
-        <button type="button" aria-selected="false">
+        <button
+          type="button"
+          aria-selected="false"
+          role="tab"
+          aria-controls="engineer-tab"
+          tabindex="-1"
+          data-image="engineer-image"
+        >
           <span class="sr-only">The Flight Engineer</span>
         </button>
       </div>
 
-      <article class="crew-details flow">
+      <!-- commander -->
+      <article
+        id="commander-tab"
+        class="crew-details flow"
+        tabindex="0"
+        role="tabpanel"
+        data-visible="true"
+      >
         <header class="flow flow--space-small">
           <h2 class="ff-accent fs-600 text-white uppercase">Commander</h2>
           <p class="ff-accent fs-700 text-white uppercase">Douglas Hurley</p>
@@ -119,21 +159,99 @@
         </p>
       </article>
 
-      <picture>
+      <!-- specialist -->
+      <article
+        id="specialist-tab"
+        class="crew-details flow"
+        tabindex="0"
+        role="tabpanel"
+        data-visible="false"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="ff-accent fs-600 text-white uppercase">Specialist</h2>
+          <p class="ff-accent fs-700 text-white uppercase">Mark Shuttleworth</p>
+        </header>
+        <p>
+          Mark Richard Shuttleworth is the founder and CEO of Canonical, the
+          company behind the Linux-based Ubuntu operating system. Shuttleworth
+          became the first South African to travel to space as a space tourist.
+        </p>
+      </article>
+
+      <!-- pilot -->
+      <article
+        id="pilot-tab"
+        class="crew-details flow"
+        tabindex="0"
+        role="tabpanel"
+        data-visible="false"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="ff-accent fs-600 text-white uppercase">Pilot</h2>
+          <p class="ff-accent fs-700 text-white uppercase">Victor Glover</p>
+        </header>
+        <p>
+          Pilot on the first operational flight of the SpaceX Crew Dragon to the
+          International Space Station. Glover is a commander in the U.S. Navy
+          where he pilots an F/A-18.He was a crew member of Expedition 64, and
+          served as a station systems flight engineer.
+        </p>
+      </article>
+
+      <!-- engineer -->
+      <article
+        id="engineer-tab"
+        class="crew-details flow"
+        tabindex="0"
+        role="tabpanel"
+        data-visible="false"
+      >
+        <header class="flow flow--space-small">
+          <h2 class="ff-accent fs-600 text-white uppercase">Flight Engineer</h2>
+          <p class="ff-accent fs-700 text-white uppercase">Anousheh Ansari</p>
+        </header>
+        <p>
+          Anousheh Ansari is an Iranian American engineer and co-founder of
+          Prodea Systems. Ansari was the fourth self-funded space tourist, the
+          first self-funded woman to fly to the ISS, and the first Iranian in
+          space.
+        </p>
+      </article>
+
+      <picture id="commander-image" data-visible="true">
         <source
           srcset="assets/crew/image-douglas-hurley.webp"
           type="image/webp"
         />
         <img src="assets/crew/image-douglas-hurley.png" alt="Douglas Hurley" />
       </picture>
-    </main>
 
-    <template>
-      00 Home 01 Destination 02 Crew 03 Technology 02 Meet your crew Mission
-      Specialist Mark Shuttleworth Mark Richard Shuttleworth is the founder and
-      CEO of Canonical, the company behind the Linux-based Ubuntu operating
-      system. Shuttleworth became the first South African to travel to space as
-      a space tourist.
-    </template>
+      <picture id="specialist-image" data-visible="false">
+        <source
+          srcset="assets/crew/image-mark-shuttleworth.webp"
+          type="image/webp"
+        />
+        <img
+          src="assets/crew/image-mark-shuttleworth.png"
+          alt="Douglas Hurley"
+        />
+      </picture>
+
+      <picture id="pilot-image" data-visible="false">
+        <source
+          srcset="assets/crew/image-victor-glover.webp"
+          type="image/webp"
+        />
+        <img src="assets/crew/image-victor-glover.png" alt="Douglas Hurley" />
+      </picture>
+
+      <picture id="engineer-image" data-visible="false">
+        <source
+          srcset="assets/crew/image-anousheh-ansari.webp"
+          type="image/webp"
+        />
+        <img src="assets/crew/image-anousheh-ansari.png" alt="Douglas Hurley" />
+      </picture>
+    </main>
   </body>
 </html>

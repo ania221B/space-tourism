@@ -952,10 +952,10 @@ body {
 
 */
 
-picture[data-visible="false"] {
+[data-visible="false"] {
     opacity: 0;
 }
 
-picture[data-visible="true"] {
+[data-visible="true"] {
     opacity: 1;
 }

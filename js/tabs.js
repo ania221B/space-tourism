@@ -87,15 +87,14 @@ function changeTabPanel (e) {
 
   hideContent(mainContainer, 'picture')
   showContent(mainContainer, [`#${targetImage}`])
-  // mainContainer.querySelector([`#${targetImage}`]).setAttribute('data-visible', true)
 }
 
 function hideContent (parent, content) {
   parent
     .querySelectorAll(content)
-    .forEach((item) => item.setAttribute('hidden', true))
+    .forEach((item) => item.setAttribute('data-visible', false))
 }
 
 function showContent (parent, content) {
-  parent.querySelector(content).removeAttribute('hidden')
+  parent.querySelector(content).setAttribute('data-visible', true)
 }
