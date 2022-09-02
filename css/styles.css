@@ -89,6 +89,12 @@ ol[role='list'] {
   list-style: none;
 }
 
+/* Prevents content from jumping when scrollbar is displayed */
+
+html {
+    scrollbar-gutter: both-edges;
+} 
+
 /* Sets core root defaults */
 html:focus-within {
   scroll-behavior: smooth;
@@ -767,6 +773,7 @@ body {
 .grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
+    align-self: start;
 }
 
 .grid-container--destination > .tab-list {
@@ -871,8 +878,7 @@ body {
             " . image content . " ;
     }
 
-    .grid-container--destination > picture,
-    .grid-container--crew > picture {
+    .grid-container--destination > picture {
         max-width: 90%;
     }
 
@@ -882,13 +888,20 @@ body {
     }
 
     .grid-container--crew {
-        justify-items: start;   
+        justify-items: start; 
+        grid-template-columns: minmax(.5rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(.5rem, 1fr);  
         grid-template-areas: 
             " . title title . "
-            " . content image . "
+            ". content image ."
             " . dots image ."
         ;
     }
+
+    .grid-container--crew > picture {
+        align-self: end;
+        max-width: 120%;
+    }
+    
 
 }
 
