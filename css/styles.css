@@ -32,6 +32,7 @@
         --fs-600: 1.5rem;
         --fs-500: 1.25rem;
         --fs-400: 1rem;
+        --fs-200: 1rem;
     }
 }
 
@@ -497,6 +498,7 @@ select {
         inset: 2rem 2rem auto auto;
         z-index: 1000;
         width: 2rem;
+        cursor: pointer;
         background-color: transparent;
         background-image: url(../assets/shared/icon-hamburger.svg);
         background-position: center;
@@ -569,11 +571,11 @@ select {
     background-color: hsl(var(--clr-neutral-100) / 1);
 }
 
-.number-indicator > * {
-    font-family: var(--ff-accent);
-    font-size: var(--fs-600);
+.number-indicators > * {
+    background: none;
+    border: none;
+    cursor: pointer;
     line-height: 1;
-    color: hsl(var(--clr-neutral-100));
     padding: 0 1em;
     aspect-ratio: 1;
     border-radius: 50%;
@@ -585,12 +587,12 @@ select {
     position: relative;
 }
 
-.numbered-indicator > *:hover,
-.numbered-indicator > *:focus {
+.number-indicators > *:hover,
+.number-indicators > *:focus {
     border-color: hsl(var(--clr-neutral-100) / 1);
 }
 
-.numbered-indicator > *::before {
+.number-indicators > *::before {
     content: '';
     position: absolute;
     top: -1px;
@@ -604,11 +606,11 @@ select {
     z-index: -1;
 }
 
-.numbered-indicator > [aria-selected="true"] {
+.number-indicators > [aria-selected="true"] {
     color: hsl(var(--clr-primary-900));
 }
 
-.numbered-indicator > [aria-selected="true"]::before {
+.number-indicators > [aria-selected="true"]::before {
     opacity: 1;
 }
 
@@ -683,6 +685,22 @@ body {
 @media (min-width: 45em) {
     .crew {
         background-image: url(../assets/crew/background-crew-desktop.jpg);
+    }
+}
+
+.technology {
+    background-image: url(../assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35em) {
+    .technology {
+        background-image: url(../assets/technology/background-technology-tablet.jpg);
+    }
+}
+
+@media (min-width: 45em) {
+    .technology {
+        background-image: url(../assets/technology/background-technology-desktop.jpg);
     }
 }
 
@@ -824,6 +842,31 @@ body {
 
 .crew-details h2 {
     color: hsl(var(--clr-neutral-100) / .5);
+}
+
+/* technology layout */
+
+.grid-container--technology {
+    padding-inline: 0;
+    grid-template-columns: minmax(1.5rem, 1fr) minmax(20rem, 1fr) minmax(1.5rem, 1fr);
+    grid-template-areas: 
+        ". title . "
+        " image image image"
+        " . numbers ."
+        " . content ."
+    ;
+}
+
+.grid-container--technology > picture {
+    grid-area:  image;
+}
+
+.grid-container--technology > .number-indicators {
+    grid-area: numbers;
+}
+
+.grid-container--technology > .technology-info {
+    grid-area: content;
 }
 
 @media (min-width: 35em) {
@@ -972,3 +1015,4 @@ body {
 [data-visible="true"] {
     opacity: 1;
 }
+
