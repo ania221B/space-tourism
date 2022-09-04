@@ -614,17 +614,13 @@ select {
     opacity: 1;
 }
 
-/* all pages */
-
-/* .primary-header {
-    padding: 1.5rem 2rem;
+[data-visible="false"] {
+    opacity: 0;
 }
 
-@media (min-width: 40em) {
-    .primary-header {
-        padding-block: 3rem;
-    }
-} */
+[data-visible="true"] {
+    opacity: 1;
+}
 
 /* ========================== */
 /* PAGE SPECIFIC BACKGROUNDS */
@@ -703,58 +699,6 @@ body {
         background-image: url(../assets/technology/background-technology-desktop.jpg);
     }
 }
-
-/* .tabby {
-    grid-template-rows: min-content 1fr;
-    --gap: 1.5rem;
-}
-
-.tabs {
-    --gap: 2rem;
-    justify-content: center;
-}
-
-.tab__content {
-    width: 100%;
-    position: relative;
-    margin: 0;
-    margin-inline: auto;
-    padding: 0;
-}
-
-.tab__content > * {
-    --gap: 1.5rem;
-    flex-direction: column;
-    position: absolute;
-
-}
-
-.tab__content > *:not(.active) {
-    opacity: 0;
-    transition: opacity 700ms ease-in-out;
-}
-
-.tab__content > .active {
-    opacity: 1;
-    transition: opacity 700ms ease-in-out 700ms;
-}
-
-.tab__content__image {
-    max-width: 20rem;
-    margin-inline: auto;
-}
-
-.tab__content__body > p {
-    max-width: 37rem;
-    margin-inline: auto;
-    padding-bottom: 2rem;
-}
-.stats {
-    padding-top: 2rem;
-    border-top: 1px solid hsl(var(--clr-neutral-100) / .25);
-    flex-direction: column;
-    justify-content: center;
-} */
 
 /* ========================== */
 /* LAYOUT                    */
@@ -847,8 +791,10 @@ body {
 /* technology layout */
 
 .grid-container--technology {
+    gap: 2rem;
     padding-inline: 0;
-    grid-template-columns: minmax(1.5rem, 1fr) minmax(20rem, 1fr) minmax(1.5rem, 1fr);
+    align-content: start;
+    grid-template-columns: minmax(1.5rem, 2.5rem) minmax(20rem, 1fr) minmax(1.5rem, 2.5rem);
     grid-template-areas: 
         ". title . "
         " image image image"
@@ -923,6 +869,7 @@ body {
 
     .grid-container--destination > picture {
         max-width: 90%;
+        justify-self: center;
     }
 
     .destination-meta {
@@ -932,7 +879,7 @@ body {
 
     .grid-container--crew {
         justify-items: start; 
-        grid-template-columns: minmax(.5rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(.5rem, 1fr);  
+        grid-template-columns: minmax(.5rem, 1fr) minmax(0, 37rem) minmax(0, 35rem) minmax(.5rem, 1fr);  
         grid-template-areas: 
             " . title title . "
             ". content image ."
@@ -944,75 +891,22 @@ body {
         align-self: end;
         max-width: 120%;
     }
-    
 
+    .grid-container--technology {
+    grid-template-columns: minmax(1.5rem, 10vw) min-content minmax(0, 37rem) minmax(0, 20rem) minmax(1.5rem, 1fr);
+    grid-template-areas: 
+        " . title title title . "
+        " . numbers content image image"
+    ;
 }
 
-/* .grid-container--pages {
-    padding-inline: 1.5rem;
-    text-align: center;
-    display: grid;
-    grid-template-rows: min-content 1fr;
-    row-gap: 2rem;
+.grid-container--technology > .number-indicators {
+    flex-direction: column;
 }
 
-.grid-container--pages > *:first-child {
-    justify-self: start;
-}
+.grid-container--technology > picture {
+    justify-self: flex-end;
+    margin-left: clamp(2rem, 3rem, 10vw);
+}   
 
-/* my version with areas 
-.grid-container--destination {
-    padding-inline: 1.5rem;
-    text-align: center;
-    grid-template-areas:
-    "title"
-    "image"
-    "tabs"
-    "article"
-     ;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, min-content) 1fr;
 }
-
-@media(min-width: 45em) {
-    .grid-container--destination {
-        text-align: left;
-        grid-template-areas:
-        ". title title ."
-        ". image tabs ."
-        ". image article ."
-         ;
-        grid-template-columns: minmax(.5rem, 1fr) repeat(2, minmax(0, 40rem)) minmax(.5rem, 1fr);
-        grid-template-rows: repeat(2, min-content) 1fr;
-    }
-    
-}
-.grid-container--destination > h1 {
-    grid-area: title;
-}
-
-.grid-container--destination > img {
-    grid-area: image;
-    align-self: center;
-}
-
-.grid-container--destination > .tabs {
-    grid-area: tabs;
-}
-
-.grid-container--destination > article {
-    grid-area: article;
-    align-self: start;
-    margin-top: 2rem;
-}
-
-*/
-
-[data-visible="false"] {
-    opacity: 0;
-}
-
-[data-visible="true"] {
-    opacity: 1;
-}
-
